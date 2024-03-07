@@ -1,0 +1,11 @@
+.messiPic {
+  position: absolute;
+  height: 300px;
+  width: 300px;
+  top: 300px;
+  left: 40px;
+}
+
+.mirror {
+  transform: scaleX(-1);
+}

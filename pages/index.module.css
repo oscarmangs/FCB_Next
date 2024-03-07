@@ -1,0 +1,54 @@
+.barca_logo {
+  width: 100px;
+  margin: 0;
+}
+.topNav {
+  background-color: var(--yellow);
+  margin: 0;
+}
+
+.topMenu {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-grow: 5;
+  margin: 0;
+}
+
+.topMenu li:not(.barca_logo_li) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  border-radius: 10px;
+  margin: 10px;
+  width: 200px;
+  height: 50px;
+  /* background-color: #004d98; */
+  color: var(--yellow);
+  background: linear-gradient(to top, #004d98 50%, transparent 50%);
+  background-size: 100% 200%;
+  background-position: 0% 100%;
+  transition: background-position 0.2s ease, background-color 0.5s ease;
+  margin: 0;
+}
+
+.topMenu .barca_logo_li {
+  margin: 0;
+  width: auto;
+  height: auto;
+  background-color: transparent;
+  margin: 0;
+}
+
+.topMenu li:hover:not(.barca_logo_li) {
+  background-position: 0% 0%;
+  background-color: rgb(168, 19, 62); /* Add the whitish color you desire */
+  color: black; /* Adjust the text color for better visibility */
+  margin: 0;
+}
+
+.topMenu li::marker {
+  content: ""; /* Hide marker by setting content to an empty string */
+  margin: 0;
+}
