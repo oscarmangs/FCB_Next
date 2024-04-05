@@ -7,7 +7,7 @@ const Layout = ({ children }) => {
 useEffect(() => {
   if (!window.dataLayer.some((item) => item.event === "page_view")) {
     window.dataLayer.push({
-      event: "page_view",
+      event: "virtual_pageview",
     });
   }
 }, []);

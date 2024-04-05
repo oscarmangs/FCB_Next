@@ -1,11 +1,11 @@
-import classes from "../components/topNav.module.css";
+import classes from "./topNav.module.css";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function TopNav() {
 
 
-    const handleLinkClick = () => {
+    const page_view_push = () => {
       dataLayer.push({'event': 'page_view'})
     };
 
@@ -22,13 +22,17 @@ export default function TopNav() {
           />
         </li>
         <li>
-          <Link href="/" onClick={handleLinkClick}>
+          <Link href="/" onClick={page_view_push}>
             Home
           </Link>
         </li>
-        <li>Squad</li>
         <li>
-          <Link href="/games" onClick={handleLinkClick}>
+          <Link href="/squad" onClick={page_view_push}>
+            Squad
+          </Link>
+        </li>
+        <li>
+          <Link href="/games" onClick={page_view_push}>
             Games
           </Link>
         </li>
