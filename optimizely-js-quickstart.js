@@ -12,7 +12,7 @@ const shouldShowMessiComponent = (userId) => {
   const messi = decision.variables.messi;
   console.log(`messi är ${messi}`);
 
-  return !decision.enabled;
+  return messi;
 };
 
 module.exports = { shouldShowMessiComponent };
