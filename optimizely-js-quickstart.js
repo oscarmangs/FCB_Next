@@ -3,7 +3,7 @@ const optimizelySdk = require("@optimizely/optimizely-sdk");
 
 // Initialize Optimizely SDK instance
 const optimizely = optimizelySdk.createInstance({
-  sdkKey: "3NchnAoyDQsEms7AqHJXp",
+  sdkKey: "U6iDSrMEkHuNe4jCbaA8f",
 });
 
 // Define a function to check if the Messi component should be shown
