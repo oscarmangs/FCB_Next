@@ -1,8 +1,8 @@
-// pages/api/fetchSquad.js
+import https from "https";
 
-import https from "https"; // Import the native Node.js 'https' module
+export default async function handler(req, res) {/*
+  console.log(process.env.FOOTBALL_API_KEY);
 
-export default async function handler(req,res) {
   const options = {
     method: "GET",
     hostname: "api.sportmonks.com",
@@ -14,32 +14,45 @@ export default async function handler(req,res) {
     maxRedirects: 20,
   };
 
-  req = https.request(options, (response) => {
-    let chunks = [];
+  const promise = new Promise((resolve, reject) => {
+    const request = https.request(options, (response) => {
+      let chunks = [];
 
-    response.on("data", (chunk) => {
-      console.log("data");
+      response.on("data", (chunk) => {
+        console.log("data");
+        chunks.push(chunk);
+      });
 
-      chunks.push(chunk);
+      response.on("end", () => {
+        const body = Buffer.concat(chunks);
+        const data = JSON.parse(body.toString());
+        resolve(data); // Resolve promise with data
+      });
     });
 
-    response.on("end", () => {
-      const body = Buffer.concat(chunks);
-      const data = JSON.parse(body.toString());
-      res.setHeader("Content-Type", "application/json");
-      res.statusCode = 200; // Set the status code directly
-      res.status(200).json(data); // Return the data directly to the client
-      console.log(data);
-      // res.status(200).json(data);
+    request.on("error", (error) => {
+      console.error("Error making HTTP request:", error);
+      reject(error); // Reject promise with error
     });
 
-    response.on("error", (error) => {
-      console.log("error");
-      console.error(error);
-      //  res.status(500).json({ error: "Internal Server Error" });
-      res.statusCode = 500;
-    });
+    request.end();
   });
 
-  req.end();
+  promise
+    .then((data) => {
+      res.setHeader("Content-Type", "application/json");
+      res.status(200).json(data); // Send response to client
+      console.log(data);
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+      res.status(500).json({ error: "Internal Server Error" }); // Send error response to client
+    });
+    */
+
+      res.status(200).json({
+      "10": "Messi", 
+      "9": "Suarez", 
+      "6": "Xavi",
+    });
 }
