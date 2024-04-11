@@ -12,6 +12,7 @@ export default function TopNav() {
   return (
     <div className={classes.topNav}>
       <ul className={classes.topMenu}>
+        <Link href="/" onClick={page_view_push}>
         <li className={classes.barca_logo_li}>
           <Image
             src="/images/barca.png"
@@ -21,21 +22,16 @@ export default function TopNav() {
             alt="logo"
           />
         </li>
-        <li>
-          <Link href="/" onClick={page_view_push}>
-            Home
-          </Link>
-        </li>
-        <li>
-          <Link href="/squad" onClick={page_view_push}>
-            Squad
-          </Link>
-        </li>
-        <li>
-          <Link href="/games" onClick={page_view_push}>
-            Games
-          </Link>
-        </li>
+        </Link>
+        <Link href="/" onClick={page_view_push}>
+          <li>Home</li>
+        </Link>
+        <Link href="/squad" onClick={page_view_push}>
+          <li>Squad</li>
+        </Link>
+        <Link href="/games" onClick={page_view_push}>
+          <li>Games</li>
+        </Link>
       </ul>
     </div>
   );
